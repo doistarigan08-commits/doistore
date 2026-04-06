@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="header">
+    DOISXBILXZ
+  </div>
+
+  <div class="form">
+
+    <!-- INPUT -->
+    <input type="text" id="user" placeholder="Username Account" autocomplete="off">
+    <input type="password" id="pass" placeholder="Password Account">
+
+    <!-- BUTTON -->
+    <div class="row">
+      <button class="btn" onclick="login()">LOGIN</button>
+    </div>
+
+    <!-- TEXT -->
+    <div class="text">
+      ©DOISXBILXZ
+    </div>
+
+  </div>
+
+</div>
+
+<!-- SCRIPT LOGIN -->
+<script>
+function login() {
+  let u = document.getElementById("user").value.trim();
+  let p = document.getElementById("pass").value.trim();
+
+  let savedUser = localStorage.getItem("username");
+  let savedPass = localStorage.getItem("password");
+
+  // cek kalau kosong
+  if (u === "" || p === "") {
+    alert("Isi dulu username & password!");
+    return;
+  }
+
+  // cek akun
+  if (u === savedUser && p === savedPass) {
+    alert("Login berhasil 😎");
+    window.location.href = "index.html";
+  } else {
+    alert("Username / Password salah!");
+  }
+}
+</script>
+
+</body>
+</html>
